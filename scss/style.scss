@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$lightGrey: hsl(217, 12%, 63%);
+$mediumGrey: hsl(210, 19%, 18%);
+$darkBlue: hsl(215, 27%, 12%);
+$veryDarkBlue: hsl(228, 11%, 9%);
+
+@mixin round {
+  aspect-ratio: 1;
+  width: 50px;
+  padding: 1rem;
+  background: $mediumGrey;
+  border-radius: 50%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Overpass";
+}
+
+body {
+  background: $veryDarkBlue;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  background: $darkBlue;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .logo {
+    @include round();
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-weight: 400;
+    color: $lightGrey;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    * {
+      padding: 0;
+      border: 0;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    button {
+      cursor: pointer;
+    }
+
+    .boutons {
+      @include round();
+      color: $lightGrey;
+      margin-bottom: 2rem;
+    }
+
+    #submit {
+      flex: 1 100%;
+      background: $orange;
+      color: $white;
+      text-transform: uppercase;
+      padding: 1rem;
+      border-radius: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  span {
+    color: $orange;
+    padding: 1rem;
+    margin: 2rem 0 0;
+    background: $mediumGrey;
+    border-radius: 2rem;
+  }
+}
